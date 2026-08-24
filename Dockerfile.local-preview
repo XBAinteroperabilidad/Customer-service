@@ -1,0 +1,23 @@
+ARG node_version=node:lts
+ARG nginx_version=nginx:1.21.3-alpine
+
+# Local-only variant of Dockerfile for previewing changes in this sandbox:
+# - skips the private `nexus.riaint.ee` registry (unreachable here, uses the public npm registry instead)
+# - skips the test-coverage run and the Sonar stage (not needed for a visual preview)
+# Not meant to be committed / used for real builds.
+
+FROM $node_version as image
+WORKDIR /usr/customer-service
+COPY ./package*.json ./
+
+FROM image AS build
+ARG env=DEV
+RUN npm ci --legacy-peer-deps
+COPY . .
+RUN npm run build
+
+FROM $nginx_version
+COPY ./nginx/https-nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build ./usr/customer-service/build /usr/share/nginx/html/customer-service
+EXPOSE 443
+CMD ["nginx", "-g", "daemon off;"]
