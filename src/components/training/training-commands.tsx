@@ -11,9 +11,11 @@ import { warningNotification } from '../../utils/toast-notifications';
 import { ToastContext } from '../../App';
 import { GET_IS_TRAINING_INTERVAL } from '../../utils/constants';
 import ConfirmationModal from '../confirmation-modal/confirmation-modal';
+import { resolveCalendarLocale } from '../../utils/locale';
 
 const TrainingCommands = (): JSX.Element => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const calendarLocale = resolveCalendarLocale(i18n.language);
   const [date, setDate] = useState<Date | Date[] | undefined>();
   const isTraining = useAppSelector((state) => state.training.isTraining);
   const assignedTrainingDate = useAppSelector((state) => state.training.assignedTrainingDate);
@@ -23,7 +25,7 @@ const TrainingCommands = (): JSX.Element => {
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
   const dispatch = useAppDispatch();
   const toastContext = useContext(ToastContext);
-  const formattedTrainingDate = DateTime.fromISO(assignedTrainingDate).setLocale('et').toLocaleString(DateTime.DATETIME_MED);
+  const formattedTrainingDate = DateTime.fromISO(assignedTrainingDate).setLocale(calendarLocale).toLocaleString(DateTime.DATETIME_MED);
 
   useEffect(() => {
     dispatch(getTrainingMetaData(true));
@@ -62,7 +64,7 @@ const TrainingCommands = (): JSX.Element => {
                 showTime
                 dateFormat="dd. M yy"
                 showIcon
-                locale="et"
+                locale={calendarLocale}
                 value={date}
                 onChange={(e) => setDate(e.value)}
               />

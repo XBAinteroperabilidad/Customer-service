@@ -7,6 +7,7 @@ import { Chat } from '../../model/chat.model';
 import { selectActiveSelectedChat, setActiveChat } from '../../slices/chats.slice';
 import { useAppSelector } from '../../store';
 import StyledButton, { StyledButtonType } from '../../styled-components/StyledButton';
+import { resolveTimeagoLocale } from '../../utils/locale';
 
 type ChatListItemProps = {
   chat: Chat;
@@ -14,7 +15,8 @@ type ChatListItemProps = {
 
 const ChatListItem = (props: ChatListItemProps): JSX.Element => {
   const { chat } = props;
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const timeagoLocale = resolveTimeagoLocale(i18n.language);
   const dispatch = useDispatch();
   const selectedChat = useAppSelector((state) => selectActiveSelectedChat(state));
   const isSelectedChat = Boolean(selectedChat && selectedChat.id === chat.id);
@@ -48,7 +50,7 @@ const ChatListItem = (props: ChatListItemProps): JSX.Element => {
           <strong>{t('chatListItem.agentName')}</strong>
           :&nbsp;{chat.customerSupportDisplayName}
         </p>
-        <p className="timeago">{timeago.format(chat.updated, 'et_EE')}</p>
+        <p className="timeago">{timeago.format(chat.updated, timeagoLocale)}</p>
       </div>
       <p className="last-message">
         <span className="symbol">&#10149;</span>
@@ -58,7 +60,7 @@ const ChatListItem = (props: ChatListItemProps): JSX.Element => {
         <p>
           <strong>{t('chatListItem.created')}</strong>
           :&nbsp;
-          <span>{timeago.format(chat.created, 'et_EE')}</span>
+          <span>{timeago.format(chat.created, timeagoLocale)}</span>
         </p>
         {!isSelectedChat && (
           <StyledButton tabIndex={0} role="button" styleType={StyledButtonType.GRAY} onClick={() => dispatch(setActiveChat(chat))} className="open-chat">

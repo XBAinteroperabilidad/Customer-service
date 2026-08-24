@@ -22,9 +22,11 @@ import { ASK_PERMISSION_BUTTON_TIMEOUT_MS, AUTHOR_ROLES, CHAT_EVENTS, CHAT_STATU
 import ForwardChatModal from './forward-chat-modal/forward-chat-modal';
 import { AskPermissionTimeoutModel } from '../../../model/ask-permission-timeout.model';
 import ForwardChatToEstablishmentModal from './forward-chat-to-institution-modal/forward-chat-to-establishment-modal';
+import { resolveCalendarLocale } from '../../../utils/locale';
 
 const ChatToolbox = (props: HTMLAttributes<HTMLElement>): JSX.Element => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const calendarLocale = resolveCalendarLocale(i18n.language);
   const dispatch = useDispatch();
   const [showEndChatModal, setShowEndChatModal] = useState(false);
   const [showForwardModal, setShowForwardModal] = useState(false);
@@ -293,7 +295,7 @@ const ChatToolbox = (props: HTMLAttributes<HTMLElement>): JSX.Element => {
 
         <p className="chat-info-detail">
           <span>{t('chatListItem.created')}:</span>
-          <span>{selectedChat && DateTime.fromISO(selectedChat.created).setLocale('et').toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS)}</span>
+          <span>{selectedChat && DateTime.fromISO(selectedChat.created).setLocale(calendarLocale).toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS)}</span>
         </p>
 
         <p className="chat-info-detail">

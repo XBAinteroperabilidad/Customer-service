@@ -9,13 +9,15 @@ import { getChatIdsMatchingMessageSearch, selectEndedSelectedChat, setActiveChat
 import { useAppDispatch, useAppSelector } from '../../store';
 import StyledButton, { StyledButtonType } from '../../styled-components/StyledButton';
 import { CHAT_STATUS } from '../../utils/constants';
+import { resolveCalendarLocale } from '../../utils/locale';
 
 type ChatArchiveTableProps = {
   isOpen: boolean;
 } & HTMLAttributes<HTMLElement>;
 
 const ChatArchiveTable = (props: ChatArchiveTableProps): JSX.Element => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const calendarLocale = resolveCalendarLocale(i18n.language);
   const dispatch = useAppDispatch();
 
   const chats = useAppSelector((state) => state.chats.endedChats);
@@ -92,13 +94,13 @@ const ChatArchiveTable = (props: ChatArchiveTableProps): JSX.Element => {
           sortable
           field="created"
           header={t('chatArchive.start')}
-          body={(rowData: Chat) => DateTime.fromISO(rowData.created).setLocale('et').toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS)}
+          body={(rowData: Chat) => DateTime.fromISO(rowData.created).setLocale(calendarLocale).toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS)}
         />
         <Column
           sortable
           field="ended"
           header={t('chatArchive.end')}
-          body={(rowData: Chat) => DateTime.fromISO(rowData.ended).setLocale('et').toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS)}
+          body={(rowData: Chat) => DateTime.fromISO(rowData.ended).setLocale(calendarLocale).toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS)}
         />
         <Column sortable field="customerSupportDisplayName" header={t('chatArchive.agent')} body={(rowData: Chat) => rowData.customerSupportDisplayName} />
         <Column

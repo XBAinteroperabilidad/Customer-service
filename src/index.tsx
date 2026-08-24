@@ -13,6 +13,7 @@ import './index.scss';
 
 import './i18n';
 import './locale/et_EE';
+import './locale/es_AR';
 
 ReactDOM.render(
   <React.StrictMode>

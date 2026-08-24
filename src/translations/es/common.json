@@ -1,0 +1,348 @@
+{
+  "menu": {
+    "chat": "chat",
+    "training": "entrenamiento",
+    "analytics": "estadísticas",
+    "administration": "administración",
+    "archive": "archivo",
+    "activeChats": "sin responder",
+    "monitoring": "monitoreo"
+  },
+  "routes": {
+    "unauthorized": "No autorizado",
+    "loggedIn": "Iniciaste sesión",
+    "loginWithTara": "ingresar con TARA",
+    "loginWithPassword": "iniciar sesión",
+    "logout": "cerrar sesión",
+    "goLoginPage": "ir a la página de inicio de sesión"
+  },
+  "roles": {
+    "administrator": "Administrador",
+    "serviceManager": "Gerente de servicio",
+    "customerSupportAgent": "Atención al cliente",
+    "chatbotTrainer": "Entrenador del chatbot",
+    "analyst": "Analista",
+    "unauthenticated": "No autenticado",
+    "ROLE_ADMINISTRATOR": "administrador",
+    "ROLE_SERVICE_MANAGER": "gerente de servicio",
+    "ROLE_CUSTOMER_SUPPORT_AGENT": "atención al cliente",
+    "ROLE_CHATBOT_TRAINER": "entrenador del chatbot",
+    "ROLE_ANALYST": "analista",
+    "ROLE_UNAUTHENTICATED": "no autenticado"
+  },
+  "activeChats": {
+    "selectedChat": "chat seleccionado",
+    "unselected": "Seleccioná un chat para empezar"
+  },
+  "chatListItem": {
+    "lastMessage": "Último mensaje",
+    "claimChat": "Tomar chat",
+    "created": "iniciado",
+    "clientName": "cliente",
+    "socialSecurityNumber": "número de documento del cliente",
+    "clientEmail": "correo electrónico del cliente",
+    "clientPhoneNumber": "teléfono del cliente",
+    "clientChatId": "ID de chat",
+    "anonymous": "anónimo",
+    "unassigned": "sin asignar",
+    "agentName": "agente",
+    "forwardedTo": "redirigido a",
+    "receivedFrom": "recibido de"
+  },
+  "intentListItem": {
+    "name": "nombre",
+    "description": "descripción",
+    "inModel": "en el modelo",
+    "examples": "ejemplos",
+    "openIntent": "abrir intención"
+  },
+  "trainingCommands": {
+    "label": "seleccioná fecha y hora del entrenamiento",
+    "trainLater": "entrenar en la fecha seleccionada",
+    "trainNow": "entrenar ahora",
+    "information": "En esta vista es posible entrenar un nuevo modelo de bot a partir de los datos del módulo de entrenamiento. El entrenamiento tarda en promedio entre 5 y 10 minutos; si se detecta un error durante el entrenamiento, hay que modificar los datos de origen y entrenar el modelo nuevamente. Mientras el modelo entrenado tenga un error, no podrá publicarse para los usuarios finales.",
+    "inTraining": "el entrenamiento comenzó:",
+    "assignedDateDescription": "fecha y hora programadas para el entrenamiento:",
+    "pastDate": "la fecha asignada debe ser en el futuro",
+    "publishButton": "publicar modelo",
+    "publishLabel": "publicar el último modelo entrenado",
+    "cancelTraining": "cancelar entrenamiento",
+    "trainingCanceled": "se canceló el entrenamiento programado",
+    "confirmPublish": "¿Estás seguro de que querés publicar el último modelo?",
+    "unableToPublish": "el modelo entrenado tiene errores",
+    "modelTraining": "el modelo se está entrenando en este momento",
+    "modelPublished": "el modelo fue publicado",
+    "errorOccurred": "ocurrió un error al publicar el modelo",
+    "deleteExampleConfirmation": "¿Estás seguro de que querés eliminar el ejemplo?",
+    "deleteExampleWarning": "cada intención debe tener al menos un ejemplo"
+  },
+  "intents": {
+    "input": {
+      "placeholder": "buscar intención...",
+      "label": "Ingresá el texto"
+    },
+    "buttonLabel": {
+      "all": "todas",
+      "inModel": "en el modelo",
+      "withoutExamples": "sin ejemplos",
+      "changeName": "renombrar intención",
+      "addExample": "agregar ejemplo",
+      "removeIntent": "quitar intención del modelo",
+      "addIntent": "agregar intención al modelo",
+      "changeRequestExample": "modificar ejemplo de solicitud",
+      "saveRequestExample": "guardar ejemplo de solicitud",
+      "changeResponse": "modificar respuesta",
+      "saveResponse": "guardar respuesta",
+      "change": "modificar",
+      "save": "guardar",
+      "cancel": "cancelar",
+      "clear": "limpiar campo",
+      "removeExampleField": "quitar campo de ejemplo",
+      "closeMarkingOptions": "cerrar opciones de marcado",
+      "createIntent": "crear intención",
+      "addAsExample": "agregar como ejemplo",
+      "deleteIntent": "eliminar intención",
+      "deleteExample": "eliminar"
+    },
+    "toolbox": {
+      "requestExample": "ejemplo de solicitud",
+      "response": "respuesta",
+      "activities": "actividades de la intención"
+    },
+    "inModel": "sí",
+    "notInModel": "no",
+    "unselected": "Seleccioná una intención para empezar",
+    "searchIntent": "buscar intención",
+    "deleteIntentModal": {
+      "header": "¿Eliminar intención?",
+      "accept": "sí",
+      "decline": "no"
+    }
+  },
+  "addIntent": {
+    "submitButton": "guardar",
+    "cancelButton": "cancelar",
+    "addExampleButton": "agregar ejemplo",
+    "modalTitle": "crear nueva intención",
+    "intentName": "nombre de la intención",
+    "intentDescription": "descripción de la intención",
+    "requestExample": "ejemplo de solicitud",
+    "response": "respuesta",
+    "examples": "agregar ejemplo/ejemplos",
+    "example": "ejemplo",
+    "missingInput": "Por favor, completá todos los campos necesarios",
+    "confirmation": "Se agregó la intención",
+    "examplePending": "Se está agregando el ejemplo",
+    "intentPending": "Se está agregando la intención",
+    "existingIntent": "Ya existe una intención con ese nombre"
+  },
+  "addExample": {
+    "confirmation": "Ejemplo agregado"
+  },
+  "chatMessage": {
+    "event": {
+      "answered": "La conversación finalizó con una respuesta aceptada",
+      "terminated": "La conversación finalizó por otros motivos",
+      "client-left": "La conversación finalizó porque el cliente se retiró",
+      "authenticate": "Por favor, autenticate",
+      "ask-permission": "Por favor, dá tu permiso para esta operación",
+      "ask-permission-accepted": "Permiso otorgado",
+      "ask-permission-rejected": "Permiso denegado",
+      "ask-permission-ignored": "Se ignoró el permiso para esta operación",
+      "redirected": "La conversación fue redirigida a otro agente de atención al cliente",
+      "contact-information": "Por favor, completá tus datos de contacto",
+      "contact-information-rejected": "El cliente se negó a compartir sus datos de contacto",
+      "inactive-chat-ended": "La conversación finalizó por inactividad mientras el bot estaba desactivado",
+      "requested-chat-forward-accepted": "El cliente aceptó derivar la conversación, la conversación finalizó",
+      "requested-chat-forward": "Se envió la solicitud de derivación",
+      "requested-chat-forward-rejected": "El cliente rechazó derivar la conversación"
+    }
+  },
+  "chatToolbox": {
+    "action": {
+      "title": "acciones del chat",
+      "terminate": "finalizar chat",
+      "forceAuthenticate": "forzar autenticación",
+      "askPermission": "solicitar permiso",
+      "askContactInformation": "solicitar datos de contacto",
+      "forward": "derivar chat",
+      "forwardInstitution": "derivar a institución"
+    },
+    "event": {
+      "answered": "con una respuesta aceptada",
+      "terminated": "por otros motivos",
+      "client-left": "La conversación finalizó porque el cliente se retiró"
+    },
+    "status": {
+      "ended": "finalizado",
+      "open": "abierto",
+      "redirected": "redirigido"
+    },
+    "info": {
+      "title": "información del chat",
+      "endUserUrl": "URL del cliente",
+      "endUserOs": "dispositivo del cliente"
+    },
+    "modal": {
+      "header": "Derivación del chat",
+      "cancelButtonLabel": "cancelar",
+      "forwardButtonLabel": "derivar chat",
+      "messagesToForwardLabel": "Seleccioná los mensajes a derivar",
+      "institutionsToForwardLabel": "Seleccioná la institución a la que derivar los mensajes",
+      "selectInstitutionWarningInstitution": "Por favor, seleccioná una institución",
+      "selectInstitutionWarningMessage": "Por favor, seleccioná al menos un mensaje",
+      "forwardRequestSuccess": "Se envió la solicitud de derivación del chat",
+      "selectInstitutionPlaceholder": "Seleccioná institución"
+    }
+  },
+  "toast": {
+    "success": "Éxito",
+    "info": "Información",
+    "warning": "Advertencia",
+    "error": "Error"
+  },
+  "addUser": {
+    "selectAll": "seleccionar todo",
+    "confirmation": "Se agregó el usuario",
+    "serverError": "Ocurrió un error del servidor",
+    "duplicateUser": "Ya existe un usuario con este ID o nombre de usuario",
+    "missingInput": "Por favor, completá todos los campos necesarios",
+    "invalidForm": "Por favor, completá todos los campos necesarios",
+    "modalTitle": "agregar usuario",
+    "modifyUserTitle": "modificar usuario",
+    "displayNamePlaceholder": "nombre mostrado al cliente",
+    "idCodePlaceholder": "código de identificación personal",
+    "idCodePlaceholderHelpText": "el código de identificación personal debe tener el prefijo del país, por ejemplo EE1234567891011",
+    "rolePlaceholder": "seleccioná los roles del usuario",
+    "submitButton": "enviar",
+    "noUsers": "no se encontraron usuarios",
+    "userName": "nombre",
+    "userPic": "código de identificación",
+    "userRoles": "roles",
+    "missingPrefix": "Por favor, agregá el código de país EE delante del código de identificación personal",
+    "wrongIdCodeLength": "La longitud del código de identificación personal es incorrecta",
+    "idCodeNumeric": "El código de identificación personal debe contener solo números, excepto el prefijo",
+    "invalidIdCode": "Código de identificación personal incorrecto",
+    "tooLongDisplayName": "El nombre de usuario puede tener hasta 60 caracteres"
+  },
+  "editUser": {
+    "columnHeader": "editar",
+    "confirmation": "el usuario se actualizó correctamente",
+    "lastAdminWarningMessage": "Debe existir al menos un administrador",
+    "buttonTitle": "modificar usuario"
+  },
+  "deleteUser": {
+    "columnHeader": "quitar",
+    "confirm": "confirmar",
+    "confirmationContent": "¿Querés quitar al usuario?",
+    "deleteConfirmation": "El usuario se eliminó correctamente",
+    "serverError": "Ocurrió un error del servidor",
+    "buttonTitle": "eliminar usuario"
+  },
+  "forwardUser": {
+    "modalHeader": "¿A quién se debe derivar la conversación?",
+    "columnHeader": "derivar",
+    "searchByName": "buscar por nombre",
+    "buttonTitle": "derivar"
+  },
+  "chatArchive": {
+    "start": "inicio",
+    "end": "fin",
+    "search": "buscar en los chats",
+    "clear": "limpiar",
+    "agent": "nombre del agente",
+    "endUserName": "nombre del cliente",
+    "endUserId": "código de identificación del cliente",
+    "contactInformation": "datos de contacto",
+    "resolution": "resolución del chat",
+    "chatId": "ID de chat",
+    "openChat": "ver chat",
+    "closeChat": "cerrar chat",
+    "detailTitle": "Chat seleccionado",
+    "emptyTableMessage": "no hay chats",
+    "redirected": "redirigido",
+    "history": "Historial de chat",
+    "refresh": "actualizar",
+    "refreshSuccess": "el historial de chat se actualizó correctamente",
+    "refreshFail": "error al actualizar el historial de chat"
+  },
+  "chatHeader": {
+    "unanswered": "sin responder",
+    "answered": "respondido",
+    "archive": "archivo",
+    "claimChat": "tomar chat",
+    "endChat": "finalizar chat",
+    "agentAwayLabel": "ausente",
+    "agentOnlineLabel": "en línea"
+  },
+  "keypad": {
+    "input": {
+      "placeholder": "Escribí tu mensaje...",
+      "label": "Ingresar texto"
+    },
+    "button": {
+      "label": "Enviar"
+    },
+    "longMessageWarning": "El mensaje debe ser más corto que 3000 caracteres"
+  },
+  "administrate": {
+    "users": "usuarios",
+    "greeting": "saludo",
+    "greetingLabel": "saludo",
+    "greetingMessage": "Saludo automático de Bürokratt, mostrado al abrir por primera vez la ventana de chat",
+    "estGreetingInputPlaceholder": "Ingresá un saludo para que muestre Bürokratt...",
+    "sessionLength": "duración de sesión",
+    "sessionLengthTitle": "duración de sesión del agente",
+    "sessionLengthPlaceholder": "30 min",
+    "sessionLengthHelperText": "La sesión puede durar entre 30 min y 480 min (8 h)",
+    "sessionLengthConfirmation": "se actualizó la duración de sesión",
+    "sessionLengthServerError": "falló la actualización de la duración de sesión",
+    "enabledLabel": "activado",
+    "disabledLabel": "desactivado",
+    "greetingTextConfirmation": "se actualizó el saludo",
+    "greetingStatusConfirmation": "se actualizó el estado del saludo",
+    "greetingTextServerError": "error del servidor",
+    "greetingStatusServerError": "falló la actualización del estado",
+    "estimatedWaitingTime": "tiempo de espera estimado",
+    "estimatedWaitingTimeTitle": "tiempo aproximado de espera del cliente",
+    "estimatedWaitingTimePlaceholder": "10 min",
+    "estimatedWaitingTimeHelperText": "El tiempo de espera puede ser de entre 1 min y 60 min.",
+    "estimatedWaitingTimeConfirmation": "se actualizó el tiempo de espera",
+    "estimatedWaitingStatusConfirmation": "se actualizó el estado del tiempo de espera",
+    "estimatedWaitingTimeServerError": "falló la actualización del tiempo de espera",
+    "estimatedWaitingStatusServerError": "falló la actualización del estado del tiempo de espera",
+    "bot": {
+      "menuLabel": "chatbot",
+      "isActiveLabel": "chatbot",
+      "isActiveDescription": "Bürokratt: un chatbot propio de la agencia que responde de forma autónoma a las consultas de los clientes."
+    }
+  },
+  "trainingHeader": {
+    "archive": "historial",
+    "intents": "intenciones",
+    "training": "entrenamiento",
+    "closeChat": "cerrar chat",
+    "closeIntent": "cerrar intención",
+    "addIntent": "agregar intención"
+  },
+  "actions": {
+    "save": "guardar"
+  },
+  "legal": {
+    "EU_SF": "Fondos Estructurales y de Inversión Europeos (ESIF)",
+    "NEXT_GEN": "Fondo de Recuperación y Resiliencia de la Unión Europea"
+  },
+  "authentication": {
+    "error": "Falló la autenticación",
+    "expirationModule": {
+      "header": "Tu sesión está por expirar",
+      "description": "Por favor, extendé o finalizá tu sesión",
+      "extend": "extender",
+      "end": "finalizar"
+    }
+  },
+  "generic": {
+    "yes": "sí",
+    "no": "no"
+  }
+}
