@@ -1,0 +1,27 @@
+# Login del backoffice (clon de Burokratt/Customer-service).
+#
+# El Dockerfile del upstream no se puede usar fuera de RIA: apunta npm al Nexus
+# privado de Estonia (nexus.riaint.ee) y encadena una etapa de SonarQube contra
+# un servidor local. Este build usa el registro público de npm y se queda con lo
+# necesario para servir la página.
+#
+# Se construye con build-authlayer.sh, que deja este archivo y la configuración
+# de nginx dentro del clon antes de llamar a docker.
+ARG node_version=node:lts
+ARG nginx_version=nginx:1.21.3-alpine
+
+FROM $node_version AS image
+WORKDIR /usr/customer-service
+COPY ./package*.json ./
+
+FROM image AS build
+ARG env=DEV
+RUN npm ci --legacy-peer-deps
+COPY . .
+RUN npm run build
+
+FROM $nginx_version
+COPY ./nginx/authlayer-ar.conf /etc/nginx/conf.d/default.conf
+COPY --from=build ./usr/customer-service/build /usr/share/nginx/html/customer-service
+EXPOSE 3004
+CMD ["nginx", "-g", "daemon off;"]
